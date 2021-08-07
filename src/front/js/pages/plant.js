@@ -11,10 +11,12 @@ export const Plant = () => {
 
 	return (
 		<div className="container-fluid">
-			<Specimen />
-			{/* <Carouselcomponent /> */}
-			<ControlledCarousel />
-			<Recomendations />
+			<div className="">
+				<Specimen />
+				{/* <Carouselcomponent /> */}
+				<ControlledCarousel />
+				<Recomendations />
+			</div>
 		</div>
 	);
 };
