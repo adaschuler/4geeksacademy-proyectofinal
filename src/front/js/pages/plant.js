@@ -2,13 +2,19 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
 import { Specimen } from "../component/specimen";
+/* import { Carouselcomponent } from "../component/carouselcomponent"; */
+import { ControlledCarousel } from "../component/carouselcomponent";
+import { Recomendations } from "../component/recomendations";
 
 export const Plant = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="row container-fluid d-flex justify-content-center">
+		<div className="container-fluid">
 			<Specimen />
+			{/* <Carouselcomponent /> */}
+			<ControlledCarousel />
+			<Recomendations />
 		</div>
 	);
 };
