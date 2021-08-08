@@ -12,7 +12,6 @@ export const Plant = () => {
 	return (
 		<div className="container-fluid">
 			<Specimen />
-			{/* <Carouselcomponent /> */}
 			<ControlledCarousel />
 			<Recomendations />
 		</div>
