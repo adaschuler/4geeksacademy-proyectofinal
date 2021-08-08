@@ -1,0 +1,11 @@
+@media(min-width:768px){
+    .navbar #basic-nav-dropdown {
+      display: none;
+    }
+}
+
+@media(max-width:768px){
+    .navbar #login-btn {
+      display: none;
+    }
+}
