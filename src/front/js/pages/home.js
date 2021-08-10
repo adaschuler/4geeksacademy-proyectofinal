@@ -14,7 +14,7 @@ export const Home = () => {
 					<p className="lead text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					<div className="d-flex justify-content-center py-4">
 						<Link to="/demo">
-							<button className="btn btn-success px-5 py-2 mx-1">Login</button>
+							<button className="btn btn-success px-5 py-2 mx-1">Log in</button>
 						</Link>
 						<Link to="/demo">
 							<button className="btn btn-secondary px-5 py-2 mx-1">Sign up</button>

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../../img/logo.png";
 import "../../styles/navigation.scss";
 import logoImageUrl from "../../img/logo.png";
 import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
+import AuthNav from "./auth-nav";
 
 export const Navigation = () => {
 	return (
@@ -15,7 +15,8 @@ export const Navigation = () => {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ml-auto">
-						<Nav.Link as={Link} to="/login">
+						<AuthNav />
+						{/* 					<Nav.Link as={Link} to="/login">
 							<Button
 								variant="success"
 								id="login-btn"
@@ -24,7 +25,7 @@ export const Navigation = () => {
 								active>
 								Login
 							</Button>
-						</Nav.Link>
+						</Nav.Link> */}
 						<NavDropdown title="Dropdown" id="basic-nav-dropdown">
 							<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
 							<NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
