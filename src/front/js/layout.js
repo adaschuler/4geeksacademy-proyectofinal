@@ -9,6 +9,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Navigation } from "./component/navigation";
 import { Footer } from "./component/footer";
+import Auth0ProviderWithHistory from "../../auth/auth0-provider-with-history";
 
 //create your first component
 const Layout = () => {
@@ -19,27 +20,29 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navigation />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/login">
-							<Login />
-						</Route>
-						<Route exact path="/plant">
-							<Plant />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-					<Footer />
-				</ScrollToTop>
+				<Auth0ProviderWithHistory>
+					<ScrollToTop>
+						<Navigation />
+						<Switch>
+							<Route exact path="/">
+								<Home />
+							</Route>
+							<Route exact path="/login">
+								<Login />
+							</Route>
+							<Route exact path="/plant">
+								<Plant />
+							</Route>
+							<Route exact path="/single/:theid">
+								<Single />
+							</Route>
+							<Route>
+								<h1>Not found!</h1>
+							</Route>
+						</Switch>
+						<Footer />
+					</ScrollToTop>
+				</Auth0ProviderWithHistory>
 			</BrowserRouter>
 		</div>
 	);
