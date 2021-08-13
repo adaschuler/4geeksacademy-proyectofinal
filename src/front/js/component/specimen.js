@@ -9,9 +9,9 @@ export const Specimen = () => {
 
 	return (
 		<div className="justify-content-sm-center">
-			<div className="text-center mt-5">
-				<div className="card">
-					<img className="card-img-top img-fluid" src={mintImageUrl} />
+			<div className="text-center mt-3">
+				<div className="card mr-2">
+					<img className="card-img-top img-fluid" src={mintImageUrl} alt="Card image cap" />
 					<div className="card-body">
 						{/* <h5 className="card-title">Card title</h5> */}
 						<p className="card-text">
@@ -38,10 +38,6 @@ export const Specimen = () => {
 							<br />
 							Variedad:
 							<br />
-						</li>
-						<li className="list-group-item">
-							<img src={logoImageUrl} />
-							<img src={logoImageUrl} />
 						</li>
 					</ul>
 				</div>
