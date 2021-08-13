@@ -8,7 +8,7 @@ import mintImageUrl03 from "../../img/plant/mint-gallery03.jpg";
 import mintImageUrl04 from "../../img/plant/mint-gallery04.jpg";
 import mintImageUrl05 from "../../img/plant/mint-gallery05.jpg";
 import mintImageUrl06 from "../../img/plant/mint-gallery06.jpg";
-import "../../styles/home.scss";
+import "../../styles/carousel.scss";
 import { Carousel } from "react-bootstrap";
 
 export function ControlledCarousel() {
@@ -23,6 +23,12 @@ export function ControlledCarousel() {
 			<div className="text-center mt-5">
 				<div className="card">
 					<div className="card-body">
+						<ul className="list-group list-group-flush">
+							<li className="list-group-item">
+								<img src={logoImageUrl} />
+								<img src={logoImageUrl} />
+							</li>
+						</ul>
 						<Carousel activeIndex={index} onSelect={handleSelect}>
 							<Carousel.Item>
 								<img className="d-block w-100" src={mintImageUrl01} alt="First slide" />
