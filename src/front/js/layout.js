@@ -6,6 +6,9 @@ import { Home } from "./pages/home";
 import { Login } from "./pages/login";
 import { Plant } from "./pages/plant";
 import { PlantDashboard } from "./pages/plantdashboard";
+import { AdminDashboard } from "./pages/admindashboard";
+import { AdminPlants } from "./pages/adminplants";
+import { AdminUsers } from "./pages/adminusers";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Navigation } from "./component/navigation";
@@ -36,6 +39,15 @@ const Layout = () => {
 							</Route>
 							<Route exact path="/plantdashboard">
 								<PlantDashboard />
+							</Route>
+							<Route exact path="/admindashboard">
+								<AdminDashboard />
+							</Route>
+							<Route exact path="/adminplants">
+								<AdminPlants />
+							</Route>
+							<Route exact path="/adminusers">
+								<AdminUsers />
 							</Route>
 							<Route exact path="/single/:theid">
 								<Single />
