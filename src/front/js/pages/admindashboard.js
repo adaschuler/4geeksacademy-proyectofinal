@@ -9,11 +9,11 @@ export const AdminDashboard = () => {
 
 	return (
 		<div className="container">
-			<div className="row justify-content-center">
-				<div className="col-6">
-					PERFIL
+			<div className="d-flex justify-content-center">
+				<div>
+					<h4>PERFIL ADMINISTRADOR</h4>
 					<p />
-					<img className="img-thumbnail rounded justify-content-center" src={logoImageUrl} width="50px" />
+					<img className="img-thumbnail rounded" src={logoImageUrl} width="50px" />
 					<p />
 					Usuario: <p />
 					Nombre: <p />
@@ -22,25 +22,33 @@ export const AdminDashboard = () => {
 					Rol: <p />
 				</div>
 			</div>
-			<div className="row">
-				<div className="col-6 mr-2">
-					<button type="button" className="btn btn-success">
-						USUARIOS
-					</button>
+			<div className="d-flex justify-content-center">
+				<div className="m-2">
+					<Link to="/adminusers">
+						<button type="button" className="btn btn-success">
+							<h6>USUARIOS</h6>
+						</button>
+					</Link>
 				</div>
-				<div className="col-6 mr-2">
-					<button type="button" className="btn btn-success">
-						PLANTAS
-					</button>
+				<div className="m-2">
+					<Link to="/adminplants">
+						<button type="button" className="btn btn-success">
+							<h6>PLANTAS</h6>
+						</button>
+					</Link>
 				</div>
-				<div className="col-12 mr-2">
-					<button type="button" className="btn btn-success">
-						ESTADISTICAS GENERALES
-					</button>
+			</div>
+			<div>
+				<div className="col-12 m-2 d-flex justify-content-center">
+					<h6>ESTADISTICAS GENERALES</h6>
+				</div>
+				<div className="d-flex justify-content-center">
 					<p className="lead text-white">
 						<ul className="list-group list-group-flush">
 							<li className="list-group-item">
 								<img src={logoImageUrl} />
+							</li>
+							<li className="list-group-item">
 								<img src={logoImageUrl} />
 							</li>
 						</ul>
