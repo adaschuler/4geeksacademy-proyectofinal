@@ -8,13 +8,29 @@ export const AdminUsers = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container justify-content-center">
-			<h2>USUARIOS</h2>
-			<img className="img-thumbnail rounded justify-content-center" src={logoImageUrl} width="50px" />
-			ID1:
-			<i className="far fa-user-circle fa-2x p-2" />
-			<i className="fas fa-trash-alt fa-2x p-2" />
-			<i className="fas fa-ban fa-2x p-2" />
+		<div className="container">
+			<div className="d-flex justify-content-center">
+				<ul className="list-group">
+					<h4>MANAGE USUARIOS</h4>
+					<li className="list-group-item">
+						<tr>
+							<td scope="col">
+								<img className="img-thumbnail rounded" src={logoImageUrl} width="50px" />
+							</td>
+							<td scope="col">ID1:blabla</td>
+							<td scope="col">
+								<i className="far fa-user-circle fa-2x p-2" />
+							</td>
+							<td scope="col">
+								<i className="fas fa-trash-alt fa-2x p-2" />
+							</td>
+							<td scope="col">
+								<i className="fas fa-ban fa-2x p-2" />
+							</td>
+						</tr>
+					</li>
+				</ul>
+			</div>
 		</div>
 	);
 };
