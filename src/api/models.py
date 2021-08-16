@@ -6,7 +6,7 @@ db = SQLAlchemy()
 class Plant(db.Model):
     __tablename__ = 'plant'
     id = db.Column(db.Integer, primary_key=True)
-    fantansy_name = db.Column(db.String(120), unique=True, nullable=False)
+    fantasy_name = db.Column(db.String(120), unique=True, nullable=False)
     name = db.Column(db.String(120), unique=True, nullable=False)
     family_name = db.Column(db.String(120), unique=True, nullable=False)
     idPlanttype = db.Column(db.Integer, db.ForeignKey('planttype.id'), nullable=False)
