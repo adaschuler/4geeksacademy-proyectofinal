@@ -74,7 +74,7 @@ def delete_plant(id):
 
 @api.route('/plantphotos', methods=['GET'])
 def get_plantphotos():
-    query_plantphotos = Plantphotos.query.all()
+    query_plantphotos = PlantPhotos.query.all()
     query_plantphotos = list(map(lambda x: x.serialize(), query_plantphotos))
     print(query_plantphotos)
     response_body = {
@@ -88,7 +88,7 @@ def get_plantphotos():
 def post_plantphotos():
     body = request.get_json()
     print(body)
-    plantphotos = Plantphotos(user_photos=body['user_photos'],idPlant=body['idPlant'])
+    plantphotos = PlantPhotos(user_photos=body['user_photos'],idPlant=body['idPlant'])
     db.session.add(plantphotos)
     db.session.commit()
     response_body = {
@@ -99,7 +99,7 @@ def post_plantphotos():
 
 @api.route('/plantphotos/<int:id>', methods=['DELETE'])
 def delete_plantphotos(id):
-    plantphotos_delete = Plantphotos.query.get(id)
+    plantphotos_delete = PlantPhotos.query.get(id)
     if not plantphotos_delete: 
         response_body = {
             "msg": "Hello, this is your DELETE /plantphotos response ",
@@ -116,7 +116,7 @@ def delete_plantphotos(id):
 
 @api.route('/planttype', methods=['GET'])
 def get_planttype():
-    query_planttype = Planttype.query.all()
+    query_planttype = PlantType.query.all()
     query_planttype = list(map(lambda x: x.serialize(), query_planttype))
     print(query_planttype)
     response_body = {
@@ -141,7 +141,7 @@ def post_planttype():
 
 @api.route('/planttype/<int:id>', methods=['DELETE'])
 def delete_planttype(id):
-    planttype_delete = Planttype.query.get(id)
+    planttype_delete = PlantType.query.get(id)
     if not planttype_delete:
         response_body = {
             "msg": "Hello, this is your DELETE /planttype response ",
@@ -224,11 +224,12 @@ def post_user():
 
 @api.route('/user/<int:id>', methods=['PUT'])
 def put_userupgrade(id):
-    user = User.filter_by(id=id)
-    request = request.body
+    user = User.query.get(id)
+    request_json = request.get_json()
 
-    user.nickname = request.nickname
-    user.email = request.email
+    user.nickname = request_json["nickname"]
+    user.email = request_json["email"]
+    
 
     db.session.commit()
 
