@@ -12,10 +12,10 @@ class Plant(db.Model):
     idPlanttype = db.Column(db.Integer, db.ForeignKey('planttype.id'), nullable=False)
     avatar = db.Column(db.String(120), unique=True, nullable=False)
     idIndicator = db.Column(db.Integer, db.ForeignKey('indicator.id'), nullable=False)
-    user_photos = db.Column(db.String(120), unique=True, nullable=False)
     water = db.Column(db.String(120), unique=True, nullable=False)
     temperature_range = db.Column(db.String(120), unique=True, nullable=False)
     idUser = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_photos = db.relationship('PlantPhotos', backref="plant", lazy=True)
 
     def __repr__(self):
         return '<Plant %r>' % self.name
@@ -30,6 +30,21 @@ class Plant(db.Model):
             "user_photos": self.user_photos,
             "water": self.water,
             "temperature_range": self.temperature_range
+        }
+
+class PlantPhotos(db.Model):
+    __tablename__ = 'plantphotos'
+    id = db.Column(db.Integer, primary_key=True)
+    user_photos = db.Column(db.String(250), unique=True, nullable=False)
+    idPlant = db.Column(db.Integer, db.ForeignKey('plant.id'), nullable=False)
+
+    def __repr__(self):
+        return '<PlantPhotos %r>' % self.user_photos
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "user_photos": self.user_photos
         }
 
 class Indicator(db.Model):
@@ -77,11 +92,15 @@ class User(db.Model):
     plant_relationship = db.relationship('Plant', backref="user", lazy=True)
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %r>' % self.nickname
 
     def serialize(self):
         return {
             "id": self.id,
+            "nickname": self.nickname,
+            "avatar": self.avatar,
             "email": self.email,
+            "credential": self.credential,
+            "rol": self.rol
             # do not serialize the password, its a security breach
         }
